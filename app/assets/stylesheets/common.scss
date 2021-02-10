@@ -1,0 +1,81 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* header */
+header {
+    background-color: black
+}
+.header-contents, .header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+.header-contents {
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+header h2 {
+    margin: 0 10px 0 0;
+    color: white;
+}
+header input {
+    padding: 7px;
+}
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 7px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+header a:first-child {
+    background-color: rgb(31, 143, 187);
+}
+header a:last-child {
+    background-color: gray;
+}
+
+/* new */
+.new {
+    
+}
+.new_contents {
+    max-width: 600px;
+    padding: 24px;
+    margin: 30px auto;
+    text-align: center;
+    border: 1px solid rgb(180, 174, 174);
+    border-radius: 10px;
+}
+.new input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.new input:last-child {
+    color: white;
+    background-color: rgb(38, 194, 233);
+    border: 1px solid rgb(39, 131, 236);
+    border-radius: 5px;
+}
+.new span {
+    display: inline-block;
+    color: white;
+    background-color: rgb(238, 78, 73);
+    font-size: 8px;
+    padding: 3px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 5px;
+}
+.new_form {
+    text-align: justify;
+    width: 360px;
+    margin: 0 auto;
+}
+.new a {
+    color: rgb(38, 194, 233);
+    text-decoration: none;
+}

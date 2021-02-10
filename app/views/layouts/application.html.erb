@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <header>
+    <div class="header-contents">
+      <div class="header-left">
+        <h2>POTE SHARE</h2>
+        <%= form_with(url: "#") do |f|%>
+          <%= f.text_field :area, value: "エリア" %>
+          <%= f.text_field :keyword, value: "キーワード" %>
+        <% end %>
+      </div>
+      <div class="header-right">
+        <%= link_to("ログイン", "#") %>
+        <%= link_to("登録する", "#") %>
+      </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
