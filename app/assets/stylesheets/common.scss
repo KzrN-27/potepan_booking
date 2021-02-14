@@ -1,11 +1,31 @@
-body {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 /* header */
 header {
-    background-color: black
+    background-color: black;
+    h2 {
+        margin: 0 10px 0 0;
+        color: white;
+    }
+    input {
+        padding: 7px;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 7px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+    a:first-child {
+        background-color: rgb(31, 143, 187);
+    }
+    a:last-child {
+        background-color: gray;
+    }
 }
 .header-contents, .header-left, .header-right {
     display: flex;
@@ -14,26 +34,6 @@ header {
 .header-contents {
     justify-content: space-between;
     padding: 15px 50px;
-}
-header h2 {
-    margin: 0 10px 0 0;
-    color: white;
-}
-header input {
-    padding: 7px;
-}
-header a {
-    color: white;
-    text-decoration: none;
-    padding: 7px;
-    margin-right: 10px;
-    border-radius: 10px;
-}
-header a:first-child {
-    background-color: rgb(31, 143, 187);
-}
-header a:last-child {
-    background-color: gray;
 }
 
 /* new */
@@ -78,4 +78,172 @@ header a:last-child {
 .new a {
     color: rgb(38, 194, 233);
     text-decoration: none;
+}
+
+/*  account profile */
+.account, .profile {
+    display: flex;
+}
+.user-side {
+    width: 15%;
+}
+.account-contents, .profile-contents {
+    width: 85%;
+    background-color: rgb(231, 224, 224);
+}
+.account-box, .profile-box {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 880px;
+    background-color: white;
+    border: 1px solid rgb(27, 26, 26);
+    h2 {
+        font-weight: normal;
+        margin: 0;
+    }
+}
+.account-box {
+    .row {
+        height: 70px;
+        border-bottom: 1px solid rgb(27, 26, 26);
+    }
+    .row:first-child {
+        height: 50px;
+    }
+    .row:last-child {
+        display: flex;
+        align-items: center;
+    }
+    .title {
+        font-weight: bold;
+    }
+    a {
+        display: inline-block;
+        font-size: 16px;
+        color: white;
+        background-color: skyblue;
+        padding: 7px;
+        margin-left: 10px;
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        text-decoration: none;
+    }
+    p {
+        padding: 10px;
+    }
+    .password {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+}
+.profile-box {
+    .row {
+        height: 70px;
+        border-bottom: 1px solid rgb(27, 26, 26);
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        border: 1px solid rgb(75,75,75);
+        border-radius: 50%;
+    }
+    label {
+        width: 20%;
+    }
+    input {
+        width: 80%;
+    }
+    .introduce {
+        height: 120px;
+    }
+    .text_field {
+        width: 100%;
+        padding: 7px;
+    }
+    .text_area {
+        width: 100%;
+        padding: 30px;
+    }
+    .submit {
+        font-size: 16px;
+        color: white;
+        background-color: skyblue;
+        padding: 7px;
+        border: 1px solid rgb(61, 170, 212);
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+    }
+}
+
+/* user_side */
+.user-side {
+    border-right: 2px solid gray;
+    padding: 30px 15px;
+    a {
+        color: black;
+        text-align: center;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .active {
+        color: skyblue;
+    }
+}
+.side-link {
+    margin: 10px 0 0 10px;
+}
+
+/* confirm */
+.confirm-contents {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+.confirm-form {
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    input {
+        width: 100%;
+        padding: 7px;
+    }
+    .submit {
+        color: white;
+        background-color: skyblue;
+        margin-top: 5px;
+        border: 1px solid rgb(38, 194, 233);
+    }
+}
+
+/* edit */
+.edit-contents {
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid rgb(180, 174, 174);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+}
+.edit-form {
+    width: 300px;
+    margin: 0 auto;
+    input {
+        width: 100%;
+        padding: 7px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    a {
+        display: inline-block;
+        width: 100%;
+        color: white;
+        background-color: skyblue;
+        padding: 7px;
+        border: 1px solid rgb(38, 194, 233);
+        border-radius: 10px;
+        text-decoration: none;
+    }
 }

@@ -1,0 +1,17 @@
+<div class="edit">
+    <div class="edit-contents">
+        <h2>アカウント編集</h2>
+        <div class="edit-form">
+            <%= form_with(model: @user, local: true) do |f| %>
+                <%= f.label :email, "メールアドレス" %>
+                <%= f.email_field :email %>
+                <%= f.label :password, "新規パスワード" %>
+                <%= f.password_field :password %>
+                <%= f.label :password_confirm, "パスワード確認" %>
+                <%= f.password_field :password_confirm %>
+                <%= f.submit "更新" %>
+            <% end %>
+            <%= link_to("戻る", confirm_path) %>
+        </div>
+    </div>
+</div>
