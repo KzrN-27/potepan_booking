@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "users/:id/profile" => "users#profile", as: :profile
   get "users/:id/confirm" => "users#confirm", as: :confirm
   post "users/:id/pass" => "users#pass", as: :pass
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :rooms, only: [:new, :create, :show, :index]
 end

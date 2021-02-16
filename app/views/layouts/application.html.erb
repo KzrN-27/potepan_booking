@@ -13,15 +13,33 @@
   <header>
     <div class="header-contents">
       <div class="header-left">
-        <h2>POTE SHARE</h2>
+        <h2><%= link_to("POTE SHARE", rooms_top_path) %></h2>
         <%= form_with(url: "#") do |f|%>
           <%= f.text_field :area, value: "エリア" %>
           <%= f.text_field :keyword, value: "キーワード" %>
         <% end %>
       </div>
       <div class="header-right">
-        <%= link_to("ログイン", "#") %>
-        <%= link_to("登録する", "#") %>
+        <% if logged_in? %>
+          <% if @current_user.image %>
+              <span><%= @current_user.name %></span>
+              <ul id="user_nav">
+                <li><%= image_tag @current_user.image.url, class: "icon", id: "header-icon" %></li>
+                  <ul class="user_menu">
+                    <li><%= link_to("ルーム登録","#") %></li>
+                    <li><%= link_to("予約済みルーム一覧","#") %></li>
+                    <li><%= link_to("登録済みルーム一覧","#") %></li>
+                    <li><%= link_to("設定","#") %></li>
+                    <li><%= link_to("ログアウト","#") %></li>
+                  </ul>
+              </ul>
+          <% else %>
+              <%= image_tag "default_icon.jpg", :size => "64x64", class: "icon" %>
+          <% end %>
+        <% else %>
+          <%= link_to("ログイン", new_session_path, class: "nlogin login") %>
+          <%= link_to("登録する", new_user_path, class: "nlogin sign") %>
+        <% end %>
       </div>
     </div>
   </header>

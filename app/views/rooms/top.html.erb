@@ -1,2 +1,43 @@
-<h1>Rooms#top</h1>
-<p>Find me in app/views/rooms/top.html.erb</p>
+<div class="top">
+    <div class="top-main">
+        <div class="top-form">
+            <h2>Potepan Shareでまだ体験したことのない旅をしよう</h2>
+            <%= form_with(model: @room, url: rooms_path) do |f| %>
+                <%= f.label :area, "エリア" %>
+                <%= f.text_field :area, value: "東京" %>
+                <%= f.submit "探す", class: "submit" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="top-list">
+        <div class="top-list-contents">
+            <h2>おすすめのエリア</h2>
+            <ul>
+                <li>
+                    <%= link_to "#" do %>
+                        <%= image_tag("img_tokyo.jpg") %>
+                        <span class="area_name">東京</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to "#" do %>
+                        <%= image_tag("img_osaka.jpg") %>
+                        <span class="area_name">大阪</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to "#" do %>
+                        <%= image_tag("img_kyoto.jpg") %>
+                        <span class="area_name">京都</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to "#" do %>
+                        <%= image_tag("img_sapporo.jpg") %>
+                        <span class="area_name">札幌</span>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
