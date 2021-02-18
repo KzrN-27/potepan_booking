@@ -2,9 +2,9 @@
     <div class="top-main">
         <div class="top-form">
             <h2>Potepan Shareでまだ体験したことのない旅をしよう</h2>
-            <%= form_with(model: @room, url: rooms_path) do |f| %>
+            <%= form_with(model: @room, url: rooms_path, method: :get, local: true) do |f| %>
                 <%= f.label :area, "エリア" %>
-                <%= f.text_field :area, value: "東京" %>
+                <%= f.text_field :area, placeholder: "東京" %>
                 <%= f.submit "探す", class: "submit" %>
             <% end %>
         </div>

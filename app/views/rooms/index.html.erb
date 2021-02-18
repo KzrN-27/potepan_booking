@@ -1,0 +1,17 @@
+<div class="rooms-index">
+    <div class="rooms-index-contents">
+        <h2>検索結果</h2>
+        <ul>
+            <% @rooms.each do |room| %>
+            <li>
+                <%= image_tag(room.image ? room.image.url : "default_icon.jpg") %>
+                <div class="room-contents">
+                    <p class="name"><%= room.name %></p>
+                    <p class="area"><%= room.area %></p>
+                    <p class="price">¥<%= room.price %></p>
+                </div>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</div>

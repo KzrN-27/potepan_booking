@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'rooms/top'
+  get "rooms/reserved" => "rooms#reserved", as: :reserved
+  get "rooms/registered" => "rooms#registered", as: :registered
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: [:new, :create, :edit, :update]
   get "users/:id/account" => "users#account", as: :account
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
   get "users/:id/confirm" => "users#confirm", as: :confirm
   post "users/:id/pass" => "users#pass", as: :pass
   resources :sessions, only: [:new, :create, :destroy]
-  resources :rooms, only: [:new, :create, :show, :index]
+  resources :rooms, only: [:new, :create, :show, :update, :index]
 end

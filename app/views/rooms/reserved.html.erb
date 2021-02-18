@@ -1,0 +1,31 @@
+<div class="reserved">
+    <div class="reserved-contents">
+        <h2>予約済みルーム一覧</h2>
+        <table>
+            <thead>
+                <tr class="table-top">
+                    <th class="th1">ルーム画像</th>
+                    <th class="th2">ルーム名</th>
+                    <th class="th3">ルーム紹介</th>
+                    <th class="th4">合計料金</th>
+                    <th class="th5">開始日</th>
+                    <th class="th6">終了日</th>
+                    <th class="th7">予約確定日時</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @rooms.each do |room| %>
+                <tr>
+                    <td><%= image_tag(room.image.url, :size => "240x140") %></td>
+                    <td><%= link_to(room.name, room ) %></td>
+                    <td><%= room.introduce %></td>
+                    <td>¥<%= room.price * room.num * (room.end - room.start).to_i %></td>
+                    <td><%= room.start %></td>
+                    <td><%= room.end %></td>
+                    <td><%= room.created_at %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
