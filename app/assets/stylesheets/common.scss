@@ -3,7 +3,17 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header + div {
+    flex: 1;
+}
 /* header */
 header {
     height: 70px;
@@ -69,6 +79,17 @@ header {
         background-color: white;
         text-decoration: none;
     }
+}
+#header-submit {
+    display: none;
+}
+#notice {
+    text-align: center;
+    background-color: skyblue;
+}
+#alert {
+    text-align: center;
+    background-color: red;
 }
 
 /* top */
@@ -136,9 +157,6 @@ header {
 }
 
 /* new */
-.new {
-    
-}
 .new_contents {
     max-width: 600px;
     padding: 24px;
@@ -417,6 +435,15 @@ header {
             padding-left: 10px;
             font-weight: bold;
         }
+        label::after {
+            content: "必須";
+            font-size: 8px;
+            color: white;
+            background-color: rgb(250, 153, 170);
+            padding: 3px;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
         input {
             width: 80%;
             padding: 7px;
@@ -562,9 +589,11 @@ header {
     }
     ul {
         display: flex;
+        flex-wrap: wrap;
     }
     li {
-        width: 25%;
+        width: 22%;
+        margin: 10px;
         list-style: none;
         border: 1px solid rgb(228, 221, 221);
     }
@@ -578,11 +607,25 @@ header {
         font-weight: bold;
         padding-bottom: 10px;
     }
+    a {
+        color: black;
+        text-decoration: none;
+    }
     .name {
         color: gray;
     }
     .price {
         font-weight: normal;
         text-align: right;
+    }
+}
+footer {
+    width: 100%;
+    height: 180px;
+    background-color: black;
+    text-align: center;
+    p {
+        color: white;
+        line-height: 180px;
     }
 }

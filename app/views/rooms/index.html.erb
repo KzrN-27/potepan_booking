@@ -4,12 +4,14 @@
         <ul>
             <% @rooms.each do |room| %>
             <li>
-                <%= image_tag(room.image ? room.image.url : "default_icon.jpg") %>
-                <div class="room-contents">
-                    <p class="name"><%= room.name %></p>
-                    <p class="area"><%= room.area %></p>
-                    <p class="price">¥<%= room.price %></p>
-                </div>
+                <%= link_to room do %>
+                    <%= image_tag(room.image ? room.image.url : "default_icon.jpg") %>
+                    <div class="room-contents">
+                        <p class="name"><%= room.name %></p>
+                        <p class="area"><%= room.area %></p>
+                        <p class="price">¥<%= room.price %></p>
+                    </div>
+                <% end %>
             </li>
             <% end %>
         </ul>

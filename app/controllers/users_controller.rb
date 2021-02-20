@@ -8,7 +8,12 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user && @user.save
+            flash[:notice] = "ユーザー登録に成功しました"
+            login_user(@user)
             redirect_to(rooms_top_path)
+        else
+            flash.now[:alert] = "ユーザー登録に失敗しました"
+            render "users/new"
         end
     end
     def edit
@@ -44,6 +49,6 @@ class UsersController < ApplicationController
     end
     def correct_user
         @user = User.find(params[:id])
-        redirect_to(root_url) unless current_user?(@user)
+        redirect_to(root_url) unless @user.id == current_user.id
     end
 end
