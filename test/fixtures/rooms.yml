@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  area: MyString
+  introduce: MyText
+  start: 2021-02-16
+  end: 2021-02-16
+  price: 1
+  num: 1
+  user_id: 1
+  reserved: false
+
+two:
+  name: MyString
+  area: MyString
+  introduce: MyText
+  start: 2021-02-16
+  end: 2021-02-16
+  price: 1
+  num: 1
+  user_id: 1
+  reserved: false

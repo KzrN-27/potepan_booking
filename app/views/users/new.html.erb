@@ -1,0 +1,19 @@
+<div class="new">
+    <div class="new_contents">
+        <p>新しいアカウントを作成</p>
+            <div class="new_form">
+                <%= form_with(model: @user, local: true) do |f| %>
+                    <span>必須</span><%= f.label :name, "ユーザー名" %><br>
+                    <%= f.text_field :name %>
+                    <span>必須</span><%= f.label :email, "メールアドレス" %><br>
+                    <%= f.email_field :email %>
+                    <span>必須</span><%= f.label :password, "パスワード" %><br>
+                    <%= f.password_field :password %>
+                    <span>必須</span><%= f.label :password_confirmation, "パスワード確認" %><br>
+                    <%= f.password_field :password_confirmation %>
+                    <%= f.submit "新しいアカウントを作成" %>
+                <% end %>
+            </div>
+        <%= link_to "すでにアカウントをお持ちの方はログイン", "#" %>
+    </div>
+</div>

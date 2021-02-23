@@ -1,0 +1,12 @@
+<div class="confirm">
+    <div class="confirm-contents">
+        <h2>現在のパスワードを入力してください</h2>
+        <div class="confirm-form">
+            <%= form_with(model: @user, url: pass_path, local: true, method: :post) do |f| %>
+                <%= f.label :password, "パスワード" %>
+                <%= f.password_field :password %>
+                <%= f.submit "確認", class: "submit" %>
+            <% end %>
+        </div>
+    </div>
+</div>

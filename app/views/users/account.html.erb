@@ -1,0 +1,17 @@
+<div class="account">
+    <%= render "shared/user_left" %>
+    <div class="account-contents">
+        <div class="account-box">
+            <div class="row"><h2>アカウント</h2></div>
+            <div class="row">
+                <span class="title">メールアドレス</span>
+                <p><%= @user.email %></p>
+            </div>
+            <div class="row">
+                <span class="title">パスワード</span>
+                <p class="password">********</p>
+            </div>
+            <div class="row"><%= link_to("編集", confirm_path) %></div>
+        </div>
+    </div>
+</div>

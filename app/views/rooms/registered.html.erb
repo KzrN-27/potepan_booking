@@ -1,0 +1,27 @@
+<div class="registered">
+    <div class="registered-contents">
+        <h2>登録済みルーム一覧</h2>
+        <table>
+            <thead>
+                <tr class="table-top">
+                    <th class="th1">ルーム画像</th>
+                    <th class="th2">ルーム名</th>
+                    <th class="th3">ルーム紹介</th>
+                    <th class="th4">料金</th>
+                    <th class="th5">作成日</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @rooms.each do |room| %>
+                <tr>
+                    <td><%= image_tag(room.image.url, :size => "240x140") %></td>
+                    <td><%= link_to(room.name, room ) %></td>
+                    <td><%= room.introduce %></td>
+                    <td>¥<%= room.price %></td>
+                    <td><%= room.created_at %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

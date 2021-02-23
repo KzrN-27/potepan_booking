@@ -1,0 +1,38 @@
+<div class="rooms-show">
+    <div class="rshow-contents">
+        <div class="rshow-left">
+            <div class="rshow-img">
+                <%= image_tag @room.image.url %>
+            </div>
+            <div class="rshow-desc">
+                <div class="rshow-desc-top">
+                    <%= image_tag current_user.image.url, :size => "64x64" %>
+                    <div class="rshow-name-area">
+                        <h2><%= @room.name %></h2>
+                        <p><%= @room.area %></p>
+                    </div>
+                </div>
+                <div class="rshow-desc-bottom">
+                    <%= @room.introduce %>
+                </div>
+            </div>
+        </div>
+        <div class="rshow-right">
+            <p>¥<%= @room.price %> / 日</p>
+            <% if @room.reserved_id %>
+                <p>予約済み</p>
+            <% else %>
+                <%= form_with(model: @room, local: true) do |f| %>
+                <%= f.label :start, "開始日" %>
+                <%= f.date_field :start %>
+                <%= f.label :end, "終了日" %>
+                <%= f.date_field :end %>
+                <%= f.label :num, "人数" %>
+                <%= f.number_field :num %>
+                <%= f.hidden_field :reserved_id, value: current_user.id %>
+                <%= f.submit "予約する", class: "submit" %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
